@@ -48,8 +48,13 @@ export default function Game() {
     const player = playerRef.current;
     if (!player) return;
     player.animate(
-      [{ transform: "translateY(0)" }, { transform: "translateY(-150px)" }, { transform: "translateY(0)" }],
-      { duration: 600, easing: "ease-in-out" }
+      [
+        { transform: "translateY(0)", offset: 0 },
+        { transform: "translateY(-150px)", offset: 0.4 },
+        { transform: "translateY(-150px)", offset: 0.7 },
+        { transform: "translateY(0)", offset: 1 }
+      ],
+      { duration: 800, easing: "ease-in-out" }
     );
   };
 
@@ -69,16 +74,16 @@ export default function Game() {
   };
 
   const startMoveLeft = () => {
-    setPlayerX((prev) => Math.max(prev - 5, 0));
+    setPlayerX((prev) => Math.max(prev - 10, 0));
     moveInterval.current = setInterval(() => {
-      setPlayerX((prev) => Math.max(prev - 5, 0));
-    }, 50);
+      setPlayerX((prev) => Math.max(prev - 10, 0));
+    }, 30);
   };
   const startMoveRight = () => {
-    setPlayerX((prev) => prev + 5);
+    setPlayerX((prev) => prev + 10);
     moveInterval.current = setInterval(() => {
-      setPlayerX((prev) => prev + 5);
-    }, 50);
+      setPlayerX((prev) => prev + 10);
+    }, 30);
   };
 
   return (
@@ -89,6 +94,7 @@ export default function Game() {
     >
       <div className="flex space-x-4 mb-4">
         <Button
+          className="text-lg p-4"
           onMouseDown={startMoveLeft}
           onMouseUp={stopMove}
           onTouchStart={startMoveLeft}
@@ -96,8 +102,9 @@ export default function Game() {
         >
           Left
         </Button>
-        <Button onClick={jump}>Jump</Button>
+        <Button className="text-lg p-4" onClick={jump}>Jump</Button>
         <Button
+          className="text-lg p-4"
           onMouseDown={startMoveRight}
           onMouseUp={stopMove}
           onTouchStart={startMoveRight}
