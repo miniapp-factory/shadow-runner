@@ -9,6 +9,7 @@ export default function Game() {
   const playerRef = useRef<HTMLDivElement>(null);
   const obstacleRef = useRef<HTMLDivElement>(null);
   const speedRef = useRef(2);
+  const moveInterval = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,8 +57,25 @@ export default function Game() {
     if (obstacle) obstacle.style.transform = "translateX(0)";
   };
 
-  const moveLeft = () => setPlayerX((prev) => Math.max(prev - 5, 0));
-  const moveRight = () => setPlayerX((prev) => prev + 5);
+  const stopMove = () => {
+    if (moveInterval.current) {
+      clearInterval(moveInterval.current);
+      moveInterval.current = null;
+    }
+  };
+
+  const startMoveLeft = () => {
+    setPlayerX((prev) => Math.max(prev - 5, 0));
+    moveInterval.current = setInterval(() => {
+      setPlayerX((prev) => Math.max(prev - 5, 0));
+    }, 50);
+  };
+  const startMoveRight = () => {
+    setPlayerX((prev) => prev + 5);
+    moveInterval.current = setInterval(() => {
+      setPlayerX((prev) => prev + 5);
+    }, 50);
+  };
 
   return (
     <div
@@ -66,9 +84,23 @@ export default function Game() {
       tabIndex={0}
     >
       <div className="flex space-x-4 mb-4">
-        <Button onClick={moveLeft}>Left</Button>
+        <Button
+          onMouseDown={startMoveLeft}
+          onMouseUp={stopMove}
+          onTouchStart={startMoveLeft}
+          onTouchEnd={stopMove}
+        >
+          Left
+        </Button>
         <Button onClick={jump}>Jump</Button>
-        <Button onClick={moveRight}>Right</Button>
+        <Button
+          onMouseDown={startMoveRight}
+          onMouseUp={stopMove}
+          onTouchStart={startMoveRight}
+          onTouchEnd={stopMove}
+        >
+          Right
+        </Button>
       </div>
       <div
         ref={playerRef}
