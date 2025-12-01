@@ -1,0 +1,172 @@
+
+# 2025-12-01 05:53:41.473340
++Code the following app
++```
++Mini App Game Concept: “Shadow Runner"
++
++Game Type:Reflex + Pattern Memory
++
++ 📱Platform:** Mobile mini-game
++
++
++📘 Game Story**
++
++You play as a Runner inside a digital world where the environment shifts between **light** and **shadow**.
++Your goal is to survive as long as possible by tapping the correct action depending on the mode.
++
++When the world turns **light**, obstacles become visible.
++When it turns **dark**, obstacles disappear, but traps appear!
++
++---
++
++# 🕹️ **How to Play**
++
++### **1. The world shifts every 5 seconds**
++
++The background cycles between:
++
++* ☀️ **Light Mode**
++* 🌑 **Shadow Mode**
++
++### **2. Player Controls**
++
++You only have **two buttons**:
++
++* **Jump** (tap left side)
++* **Slide** (tap right side)
++
++### **3. Obstacles by Mode**
++
++| Mode      | What Appears           | What to Do                  |
++| --------- | ---------------------- | --------------------------- |
++| ☀️ Light  | Walls + Spikes         | Jump or Slide to avoid      |
++| 🌑 Shadow | Hidden traps that glow | Memorize patterns and avoid |
++
++### **4. Pattern Memory**
++
++Every time the world switches, the **trap pattern changes**.
++Players must memorize the glowing trap pattern in Shadow Mode before it disappears.
++
++### **5. Scoring**
++
++* +1 point for each obstacle survived
++* +5 points for completing a full light/shadow cycle
++* Game ends when you collide with anything
++
++---
++
++# 🧩 **Extra Features**
++
++### **Power-ups**
++
++* **Flash Burst** – briefly reveal shadow traps
++* **Slow Time** – reduce world speed for 3 seconds
++* **Shield** – survive one hit
++
++### **Difficulty Levels**
++
++* Easy: Slow world switching
++* Normal: Standard speed
++* Hard: Faster switching + random fake traps
++
++### **Leaderboard**
++
++* Track top local scores
++* Optional online ranking (for future enhancements)
++
++---
++
++# 🎨 **UI / Visual Style**
++
++* Neon cyberpunk aesthetic
++* Light/Shadow theme switching animations
++* Simple two-button control layout
++```
++
++Generate an app logo and update the app metadata title and description.
+
+# 2025-12-01 05:53:41.473834
++Code the following app
++```
++Mini App Game Concept: “Shadow Runner"
++
++Game Type:Reflex + Pattern Memory
++
++ 📱Platform:** Mobile mini-game
++
++
++📘 Game Story**
++
++You play as a Runner inside a digital world where the environment shifts between **light** and **shadow**.
++Your goal is to survive as long as possible by tapping the correct action depending on the mode.
++
++When the world turns **light**, obstacles become visible.
++When it turns **dark**, obstacles disappear, but traps appear!
++
++---
++
++# 🕹️ **How to Play**
++
++### **1. The world shifts every 5 seconds**
++
++The background cycles between:
++
++* ☀️ **Light Mode**
++* 🌑 **Shadow Mode**
++
++### **2. Player Controls**
++
++You only have **two buttons**:
++
++* **Jump** (tap left side)
++* **Slide** (tap right side)
++
++### **3. Obstacles by Mode**
++
++| Mode      | What Appears           | What to Do                  |
++| --------- | ---------------------- | --------------------------- |
++| ☀️ Light  | Walls + Spikes         | Jump or Slide to avoid      |
++| 🌑 Shadow | Hidden traps that glow | Memorize patterns and avoid |
++
++### **4. Pattern Memory**
++
++Every time the world switches, the **trap pattern changes**.
++Players must memorize the glowing trap pattern in Shadow Mode before it disappears.
++
++### **5. Scoring**
++
++* +1 point for each obstacle survived
++* +5 points for completing a full light/shadow cycle
++* Game ends when you collide with anything
++
++---
++
++# 🧩 **Extra Features**
++
++### **Power-ups**
++
++* **Flash Burst** – briefly reveal shadow traps
++* **Slow Time** – reduce world speed for 3 seconds
++* **Shield** – survive one hit
++
++### **Difficulty Levels**
++
++* Easy: Slow world switching
++* Normal: Standard speed
++* Hard: Faster switching + random fake traps
++
++### **Leaderboard**
++
++* Track top local scores
++* Optional online ranking (for future enhancements)
++
++---
++
++# 🎨 **UI / Visual Style**
++
++* Neon cyberpunk aesthetic
++* Light/Shadow theme switching animations
++* Simple two-button control layout
++```
++
++Generate an app logo and update the app metadata title and description.
