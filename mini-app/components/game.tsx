@@ -59,6 +59,19 @@ export default function Game() {
       { duration, easing: "ease-in-out" }
     );
   };
+  const slide = () => {
+    if (gameOver) return;
+    const player = playerRef.current;
+    if (!player) return;
+    player.animate(
+      [
+        { transform: "translateY(0)", offset: 0 },
+        { transform: "translateY(20px)", offset: 0.3 },
+        { transform: "translateY(0)", offset: 1 }
+      ],
+      { duration: 400, easing: "ease-in-out" }
+    );
+  };
 
   const restart = () => {
     setGameOver(false);
