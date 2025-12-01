@@ -182,3 +182,167 @@
 
 # 2025-12-01 06:15:39.917450
 +apply changes
+
+# 2025-12-01 06:36:43.975488
++Can you change the game to this.
++---
++# 🕹️ **Mini Game: “Dash Block”**
++
++## 🎮 **Game Description**
++
++“Dash Block” is a fast-paced, single-tap platform runner where the player controls a small square that automatically moves forward. The goal is to avoid obstacles by jumping at the right time.
++
++The game gets faster as the player survives longer.
++
++---
++
++# 📜 **Game Rules**
++
++### **1. Automatic Movement**
++
++* The player block moves forward continuously.
++* The player cannot stop or slow down.
++
++### **2. Jump to Avoid Obstacles**
++
++* Tap / Press Space / Click to make the block **jump**.
++* Tapping again mid-air does *not* double jump (classic Geometry Dash style).
++
++### **3. Collision = Game Over**
++
++The game ends if the block touches:
++
++* A spike
++* A tall wall
++* Any moving obstacle
++
++### **4. Level Progression / Speed Increase**
++
++* The longer you survive, the faster the block moves.
++* Higher speed = higher difficulty.
++
++### **5. Scoring System**
++
++* +1 point for every second survived.
++* Optional: +5 bonus points for passing a special marker.
++
++### **6. Win Condition (Optional for mini game)**
++
++* Reach the end of the map (if there is a fixed level)
++  OR
++* Set a high score on endless mode.
++
++---
++
++# 🎯 **Game Features**
++
++* Simple tap/spacebar control
++* Basic geometry-style shapes
++* Smooth continuous movement
++* Increasing difficulty
++* Sound effect when jumping (optional)
++* Restart button after death
++
++---
++
++# 🧱 **Game Objects**
++
++### **Player Block**
++
++* Shape: square
++* Color: any (default blue)
++* Behavior: runs & jumps
++
++### **Obstacles**
++
++* Spikes (triangles)
++* Walls (rectangles)
++* Moving enemies (optional)
++
++### **Ground**
++
++* Flat line the block runs on
++
++
+
+# 2025-12-01 06:36:43.975941
++Can you change the game to this.
++---
++# 🕹️ **Mini Game: “Dash Block”**
++
++## 🎮 **Game Description**
++
++“Dash Block” is a fast-paced, single-tap platform runner where the player controls a small square that automatically moves forward. The goal is to avoid obstacles by jumping at the right time.
++
++The game gets faster as the player survives longer.
++
++---
++
++# 📜 **Game Rules**
++
++### **1. Automatic Movement**
++
++* The player block moves forward continuously.
++* The player cannot stop or slow down.
++
++### **2. Jump to Avoid Obstacles**
++
++* Tap / Press Space / Click to make the block **jump**.
++* Tapping again mid-air does *not* double jump (classic Geometry Dash style).
++
++### **3. Collision = Game Over**
++
++The game ends if the block touches:
++
++* A spike
++* A tall wall
++* Any moving obstacle
++
++### **4. Level Progression / Speed Increase**
++
++* The longer you survive, the faster the block moves.
++* Higher speed = higher difficulty.
++
++### **5. Scoring System**
++
++* +1 point for every second survived.
++* Optional: +5 bonus points for passing a special marker.
++
++### **6. Win Condition (Optional for mini game)**
++
++* Reach the end of the map (if there is a fixed level)
++  OR
++* Set a high score on endless mode.
++
++---
++
++# 🎯 **Game Features**
++
++* Simple tap/spacebar control
++* Basic geometry-style shapes
++* Smooth continuous movement
++* Increasing difficulty
++* Sound effect when jumping (optional)
++* Restart button after death
++
++---
++
++# 🧱 **Game Objects**
++
++### **Player Block**
++
++* Shape: square
++* Color: any (default blue)
++* Behavior: runs & jumps
++
++### **Obstacles**
++
++* Spikes (triangles)
++* Walls (rectangles)
++* Moving enemies (optional)
++
++### **Ground**
++
++* Flat line the block runs on
++
++
