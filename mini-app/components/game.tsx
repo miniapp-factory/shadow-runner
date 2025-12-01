@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 
 export default function Game() {
   const [score, setScore] = useState(0);
+  const [playerX, setPlayerX] = useState(10);
   const [gameOver, setGameOver] = useState(false);
   const playerRef = useRef<HTMLDivElement>(null);
   const obstacleRef = useRef<HTMLDivElement>(null);
@@ -55,14 +56,25 @@ export default function Game() {
     if (obstacle) obstacle.style.transform = "translateX(0)";
   };
 
+  const moveLeft = () => setPlayerX((prev) => Math.max(prev - 5, 0));
+  const moveRight = () => setPlayerX((prev) => prev + 5);
+
   return (
     <div
-      className="relative w-full h-[400px] bg-black overflow-hidden"
-      onClick={jump}
+      className="relative w-full h-[400px] bg-black overflow-hidden flex flex-col items-center justify-center"
       onKeyDown={(e) => e.key === " " && jump()}
       tabIndex={0}
     >
-      <div ref={playerRef} className="absolute bottom-0 left-10 w-10 h-10 bg-blue-500"></div>
+      <div className="flex space-x-4 mb-4">
+        <Button onClick={moveLeft}>Left</Button>
+        <Button onClick={jump}>Jump</Button>
+        <Button onClick={moveRight}>Right</Button>
+      </div>
+      <div
+        ref={playerRef}
+        className="absolute bottom-0 w-10 h-10 bg-blue-500"
+        style={{ left: `${playerX}px` }}
+      ></div>
       <div ref={obstacleRef} className="absolute bottom-0 right-0 w-10 h-20 bg-red-500"></div>
       <div className="absolute top-0 left-0 p-2 text-white">{score}</div>
       {gameOver && (
