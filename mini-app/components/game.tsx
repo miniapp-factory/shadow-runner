@@ -43,18 +43,20 @@ export default function Game() {
     return () => clearInterval(interval);
   }, [gameOver]);
 
-  const jump = () => {
+  const jump = (hold: boolean = false) => {
     if (gameOver) return;
     const player = playerRef.current;
     if (!player) return;
+    const height = hold ? -200 : -150;
+    const duration = hold ? 1000 : 800;
     player.animate(
       [
         { transform: "translateY(0)", offset: 0 },
-        { transform: "translateY(-150px)", offset: 0.4 },
-        { transform: "translateY(-150px)", offset: 0.7 },
+        { transform: `translateY(${height}px)`, offset: 0.4 },
+        { transform: `translateY(${height}px)`, offset: 0.7 },
         { transform: "translateY(0)", offset: 1 }
       ],
-      { duration: 800, easing: "ease-in-out" }
+      { duration, easing: "ease-in-out" }
     );
   };
 
@@ -89,7 +91,10 @@ export default function Game() {
   return (
     <div
       className="relative w-full h-[400px] bg-black overflow-hidden flex flex-col items-center justify-center"
-      onKeyDown={(e) => e.key === " " && jump()}
+      onKeyDown={(e) => {
+        if (e.key === " ") jump();
+        if (e.key === "ArrowDown") slide();
+      }}
       tabIndex={0}
     >
       <div className="flex space-x-4 mb-4">
@@ -102,7 +107,13 @@ export default function Game() {
         >
           Left
         </Button>
-        <Button className="text-lg p-4" onClick={jump}>Jump</Button>
+        <Button
+          className="text-lg p-4"
+          onMouseDown={() => jump(true)}
+          onMouseUp={() => jump(false)}
+        >
+          Jump
+        </Button>
         <Button
           className="text-lg p-4"
           onMouseDown={startMoveRight}
@@ -112,6 +123,7 @@ export default function Game() {
         >
           Right
         </Button>
+        <Button className="text-lg p-4" onClick={slide}>Slide</Button>
       </div>
       <div
         ref={playerRef}
