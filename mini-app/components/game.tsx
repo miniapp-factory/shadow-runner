@@ -25,12 +25,16 @@ export default function Game() {
       if (!player || !obstacle) return;
       const playerRect = player.getBoundingClientRect();
       const obstacleRect = obstacle.getBoundingClientRect();
-      if (
-        playerRect.right > obstacleRect.left &&
-        playerRect.left < obstacleRect.right &&
-        playerRect.bottom > obstacleRect.top
-      ) {
-        setGameOver(true);
+      const triangle = obstacle.querySelector('.triangle');
+      if (triangle) {
+        const triRect = triangle.getBoundingClientRect();
+        if (
+          playerRect.right > triRect.left &&
+          playerRect.left < triRect.right &&
+          playerRect.bottom > triRect.top
+        ) {
+          setGameOver(true);
+        }
       }
       obstacle.style.transform = `translateX(-${speedRef.current}px)`;
       requestAnimationFrame(move);
@@ -45,7 +49,7 @@ export default function Game() {
     if (!player) return;
     player.animate(
       [{ transform: "translateY(0)" }, { transform: "translateY(-150px)" }, { transform: "translateY(0)" }],
-      { duration: 300, easing: "ease-out" }
+      { duration: 600, easing: "ease-in-out" }
     );
   };
 
@@ -107,7 +111,10 @@ export default function Game() {
         className="absolute bottom-0 w-10 h-10 bg-blue-500"
         style={{ left: `${playerX}px` }}
       ></div>
-      <div ref={obstacleRef} className="absolute bottom-0 right-0 w-10 h-20 bg-red-500"></div>
+      <div ref={obstacleRef} className="absolute bottom-0 right-0 w-10 h-20">
+        <div className="box w-10 h-10 bg-green-500 absolute bottom-0"></div>
+        <div className="triangle w-10 h-10 absolute bottom-0" style={{clipPath:"polygon(50% 0%, 0% 100%, 100% 100%)"}}></div>
+      </div>
       <div className="absolute top-0 left-0 p-2 text-white">{score}</div>
       {gameOver && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 text-white">
